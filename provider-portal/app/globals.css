@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * GAIN Provider Portal - Global Styles
+ * Based on GAIN Brand Design Guidelines v3.0 (December 2025)
+ */
+
+:root {
+  /* =========================================================================
+   * BRAND COLORS - Primary Teal Scale
+   * ========================================================================= */
+  --brand-teal-100: #1E5A78;
+  --brand-teal-80: #528499;
+  --brand-teal-60: #82ABBA;
+  --brand-teal-40: #B7D4DD;
+  --brand-teal-20: #F0FAFE;
+
+  /* =========================================================================
+   * BRAND COLORS - Yellow Maize Scale (use sparingly, <10% of design)
+   * ========================================================================= */
+  --brand-maize-100: #FFC846;
+  --brand-maize-80: #FFCE55;
+  --brand-maize-60: #FFDA71;
+  --brand-maize-40: #FFE394;
+  --brand-maize-20: #FFF5CC;
+
+  /* =========================================================================
+   * BRAND COLORS - Neutral Scale
+   * ========================================================================= */
+  --brand-neutral-100: #3C4851;
+  --brand-neutral-80: #67727A;
+  --brand-neutral-60: #94A0A5;
+  --brand-neutral-40: #C2CCD1;
+  --brand-neutral-20: #EBECED;
+
+  /* =========================================================================
+   * BRAND COLORS - Dark Mode Scale
+   * ========================================================================= */
+  --brand-dark-100: #1F3643;
+  --brand-dark-80: #2B4956;
+  --brand-dark-60: #406470;
+  --brand-dark-40: #577D87;
+  --brand-dark-20: #82A1A8;
+
+  /* =========================================================================
+   * BRAND COLORS - CTA Scale
+   * ========================================================================= */
+  --brand-cta-100: #003756;
+  --brand-cta-80: #006E9E;
+  --brand-cta-60: #008BBC;
+  --brand-cta-40: #64BFD8;
+  --brand-cta-20: #A2E5F4;
+
+  /* =========================================================================
+   * SEMANTIC COLORS
+   * ========================================================================= */
+  --success: #10B981;
+  --success-light: #D1FAE5;
+  --success-dark: #047857;
+  --warning: #F59E0B;
+  --warning-light: #FEF3C7;
+  --warning-dark: #B45309;
+  --danger: #EF4444;
+  --danger-light: #FEE2E2;
+  --danger-dark: #B91C1C;
+  --info: #3B82F6;
+  --info-light: #DBEAFE;
+  --info-dark: #1E40AF;
+
+  /* =========================================================================
+   * LEGACY ALIASES (for backward compatibility)
+   * ========================================================================= */
+  --gain-teal: #1E5A78;
+  --gain-teal-dark: #1E5A78;
+  --gain-teal-light: #F0FAFE;
+  --gain-gold: #FFC846;
+  --gain-gold-dark: #FFCE55;
+  --gain-gold-light: #FFF5CC;
+
+  /* =========================================================================
+   * BASE COLORS
+   * ========================================================================= */
+  --background: #FFFFFF;
+  --foreground: #3C4851;
+  --muted: #EBECED;
+  --border: #C2CCD1;
+
+  /* =========================================================================
+   * GRADIENTS
+   * ========================================================================= */
+  --gradient-4-point: linear-gradient(135deg, #1F3643 0%, #1E5A78 50%, #528499 100%);
+  --gradient-5-point: linear-gradient(135deg, #1F3643 0%, #2B4956 25%, #1E5A78 50%, #006E9E 75%, #64BFD8 100%);
+  --gradient-6-point: linear-gradient(135deg, #1F3643 0%, #2B4956 20%, #1E5A78 40%, #006E9E 60%, #008BBC 80%, #A2E5F4 100%);
+  --gradient-hero: linear-gradient(135deg, #1F3643 0%, #1E5A78 100%);
+  --gradient-cta: linear-gradient(135deg, #1E5A78 0%, #006E9E 100%);
+}
+
+/* =============================================================================
+ * BASE LAYER
+ * ============================================================================= */
+@layer base {
+  * {
+    @apply border-brand-neutral-40;
+  }
+
+  body {
+    @apply bg-gray-50 text-brand-neutral-100;
+    font-family: 'Lexend', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  /* Headlines use Montserrat Bold */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-3xl leading-tight;
+    color: var(--brand-teal-100);
+  }
+
+  h2 {
+    @apply text-2xl leading-tight;
+    color: var(--brand-teal-100);
+  }
+
+  h3 {
+    @apply text-xl leading-snug;
+    color: var(--brand-teal-100);
+  }
+
+  /* Body text uses Lexend */
+  p, span, li, td, th, label, input, textarea, select {
+    font-family: 'Lexend', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+/* =============================================================================
+ * COMPONENTS LAYER
+ * ============================================================================= */
+@layer components {
+  /* Brand Button - Primary */
+  .btn-primary {
+    @apply px-4 py-2 font-bold text-white rounded-sm transition-colors;
+    background-color: var(--brand-teal-100);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--brand-cta-80);
+  }
+
+  /* Brand Button - Accent (use sparingly) */
+  .btn-accent {
+    @apply px-4 py-2 font-bold rounded-sm transition-colors;
+    background-color: var(--brand-maize-100);
+    color: var(--brand-teal-100);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .btn-accent:hover {
+    background-color: var(--brand-maize-80);
+  }
+
+  /* Card with brand styling */
+  .card-brand {
+    @apply bg-white rounded-sm shadow-sm border;
+    border-color: var(--brand-neutral-40);
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-4 {
+    background: var(--gradient-4-point);
+  }
+
+  .bg-gradient-5 {
+    background: var(--gradient-5-point);
+  }
+
+  .bg-gradient-6 {
+    background: var(--gradient-6-point);
+  }
+
+  .bg-gradient-cta {
+    background: var(--gradient-cta);
+  }
+}
+
+/* =============================================================================
+ * UTILITIES LAYER
+ * ============================================================================= */
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-brand-neutral-20 rounded;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-brand-neutral-40 rounded;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-neutral-60;
+  }
+
+  /* Text ellipsis */
+  .text-ellipsis-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-shadow duration-200 hover:shadow-md;
+  }
+
+  /* KPI value styling */
+  .kpi-value {
+    @apply text-3xl font-bold;
+    color: var(--brand-neutral-100);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Trend indicators */
+  .trend-positive {
+    color: var(--success);
+  }
+
+  .trend-negative {
+    color: var(--danger);
+  }
+
+  .trend-neutral {
+    color: var(--brand-neutral-60);
+  }
+
+  /* Grade badges - A through E */
+  .grade-a {
+    @apply border;
+    background-color: var(--success-light);
+    color: var(--success-dark);
+    border-color: var(--success);
+  }
+
+  .grade-b {
+    @apply border;
+    background-color: var(--info-light);
+    color: var(--info-dark);
+    border-color: var(--info);
+  }
+
+  .grade-c {
+    @apply border;
+    background-color: var(--brand-neutral-20);
+    color: var(--brand-neutral-100);
+    border-color: var(--brand-neutral-40);
+  }
+
+  .grade-d {
+    @apply border;
+    background-color: var(--warning-light);
+    color: var(--warning-dark);
+    border-color: var(--warning);
+  }
+
+  .grade-e {
+    @apply border;
+    background-color: var(--danger-light);
+    color: var(--danger-dark);
+    border-color: var(--danger);
+  }
+
+  /* Brand text colors */
+  .text-brand-teal {
+    color: var(--brand-teal-100);
+  }
+
+  .text-brand-maize {
+    color: var(--brand-maize-100);
+  }
+
+  /* Brand background colors */
+  .bg-brand-teal {
+    background-color: var(--brand-teal-100);
+  }
+
+  .bg-brand-teal-light {
+    background-color: var(--brand-teal-20);
+  }
+
+  .bg-brand-maize {
+    background-color: var(--brand-maize-100);
+  }
+
+  .bg-brand-maize-light {
+    background-color: var(--brand-maize-20);
+  }
+
+  /* Focus ring with brand color */
+  .focus-brand {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    --tw-ring-color: var(--brand-teal-60);
+  }
+}
